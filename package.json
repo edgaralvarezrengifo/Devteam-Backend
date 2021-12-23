@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node --use_strict ./lib/index.js",
-    "build" : "nodemon lib/index.js --exec babel-node --presets=es2015,stage-2"
+    "build": "babel src -d lib",
+    "start": "nodemon --exec babel-node lib/index.js",
+    "serve": "npm run build && node lib/index.js"
   },
   "keywords": [],
   "author": "",
